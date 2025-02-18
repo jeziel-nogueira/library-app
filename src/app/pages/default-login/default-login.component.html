@@ -1,0 +1,31 @@
+<app-default-login-layout 
+    title="Login in to your account"
+    primary_btn_text="Login Now"
+    secondary_btn_text="Signup Now"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    >
+    <form [formGroup]="loginForm">
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeholder="@e-mail.com"
+        >
+        <!-- <FontAwesomeIcon icon="fa-regular fa-user" /> -->
+        <i class="fa fa-user"></i>
+        </app-primary-input>
+        
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Password"
+        >
+        <!-- <i class="fa-solid fa-lock"></i> -->
+        <i class="fa fa-lock"></i>
+        </app-primary-input>
+        <a (click)="forgot()" class="forgot-password">Forgot password?</a>
+    </form>
+</app-default-login-layout>

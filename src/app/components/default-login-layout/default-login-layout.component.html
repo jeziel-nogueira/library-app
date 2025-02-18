@@ -1,0 +1,15 @@
+<main>
+    <section class="form-section">
+        <h2>{{ title }}</h2>
+        <ng-content></ng-content>
+        <div class="btn-wraper">
+            <button class="btn-primary" (click)="submit()">{{ primary_btn_text }}</button>
+            <div class="divider">
+                <div></div>
+                <span>OR</span>
+                <div></div>
+            </div>
+            <button class="btn-secondary" (click)="navigate()">{{ secondary_btn_text }}</button>
+        </div>
+    </section>    
+</main>
