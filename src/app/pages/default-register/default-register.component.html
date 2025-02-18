@@ -4,8 +4,9 @@
     secondary_btn_text="Login Now"
     (submit)="submit()"
     (navigate)="navigate()"
+    [disablePrimaryBtn]="!registerForm.valid"
     >
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm" *ngIf="registerForm">
         <app-primary-input
             formControlName="username"
             inputName="username"
