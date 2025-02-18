@@ -21,7 +21,7 @@ main{
         padding: 0 35px;
         width: 350px;
         height: 500px;
-        gap: 34px;
+        gap: 20px;
         color: $primary-color;
 
         .h2{
@@ -36,7 +36,7 @@ main{
             align-items: center;
             justify-content: center;
             width: 100%;
-            gap: 15px;
+            gap: 10px;
             
             button{
                 width: 100%;
@@ -45,14 +45,8 @@ main{
                 font-weight: 500;
                 border: none;
                 background: transparent;
-                padding: 12px 24px;                
-
-                &:disabled{
-                    opacity: 0.4;
-                }
-                &:enabled{
-                    cursor: pointer;
-                }
+                padding: 12px 24px;
+                cursor: pointer;
     
                 font-family: sans-serif;
     
@@ -64,9 +58,8 @@ main{
                 &.btn-secondary{
                     border: 1px solid $primary-color;
                     color: $primary-color;
-                }
+                }                
             }
-
             .divider{
                 display: flex;
                 align-items: center;

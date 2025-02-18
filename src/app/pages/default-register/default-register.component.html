@@ -1,1 +1,48 @@
-<p>default-register works!</p>
+<app-default-register-layout
+    title="Create an account"
+    primary_btn_text="Create Now"
+    secondary_btn_text="Login Now"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    >
+    <form [formGroup]="registerForm">
+        <app-primary-input
+            formControlName="username"
+            inputName="username"
+            type="text"
+            label="User Name"
+            placeholder="My Name"
+        >
+        <i class="fa fa-user"></i>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeholder="@e-mail.com"
+        >
+        <i class="fa fa-user"></i>
+        </app-primary-input>
+        
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Password"
+        >
+        <i class="fa fa-lock"></i>
+        </app-primary-input>
+
+        <app-primary-input
+            formControlName="confirm_password"
+            inputName="confirm_password"
+            type="password"
+            label="Confirm Password"
+        >
+        <i class="fa fa-lock"></i>
+        </app-primary-input>
+
+    </form>
+</app-default-register-layout>

@@ -4,6 +4,7 @@
     secondary_btn_text="Signup Now"
     (submit)="submit()"
     (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
     >
     <form [formGroup]="loginForm">
         <app-primary-input
@@ -13,7 +14,6 @@
             label="Email"
             placeholder="@e-mail.com"
         >
-        <!-- <FontAwesomeIcon icon="fa-regular fa-user" /> -->
         <i class="fa fa-user"></i>
         </app-primary-input>
         
@@ -23,7 +23,6 @@
             type="password"
             label="Password"
         >
-        <!-- <i class="fa-solid fa-lock"></i> -->
         <i class="fa fa-lock"></i>
         </app-primary-input>
         <a (click)="forgot()" class="forgot-password">Forgot password?</a>
