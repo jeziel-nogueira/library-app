@@ -1,0 +1,18 @@
+.dashboard-main{
+    display: flex;
+    flex-direction: column;
+
+    .dashboard-content{
+        display: flex;
+
+        .header-content{
+            width: 100%;
+        }
+
+        .side-nav{
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+    }
+}

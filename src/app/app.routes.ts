@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { DefaultLoginComponent } from './pages/default-login/default-login.component';
 import { DefaultRegisterComponent } from './pages/default-register/default-register.component';
+import { DefaultDashboardComponent } from './pages/default-dashboard/default-dashboard.component';
 
 export const routes: Routes = [
     {
@@ -12,5 +13,10 @@ export const routes: Routes = [
         path: "register",
         component: DefaultRegisterComponent,
         title:"Register"
+    },
+    {
+        path: "dashboard",
+        component: DefaultDashboardComponent,
+        title:"Dashboard"
     }
 ];

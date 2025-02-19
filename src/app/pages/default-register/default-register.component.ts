@@ -50,4 +50,4 @@ export class DefaultRegisterComponent {
     navigate(){
       this.router.navigate(["/login"])
     }
-}
+} 
