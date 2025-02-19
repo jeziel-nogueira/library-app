@@ -6,7 +6,7 @@ main{
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: #abe5b4;
+    background-color: $gray-bg;
 
     section{
         display: flex;
@@ -16,7 +16,7 @@ main{
     }
 
     .form-section{
-        background-color: white;
+        background-color: $default-bg;
         border-radius: 20px;
         padding: 0 35px;
         width: 350px;
