@@ -4,7 +4,31 @@
     </div>
     <div class="dashboard-content">
         <div class="side-nav">
-            <app-default-dashboard-navigator></app-default-dashboard-navigator>
+            <app-default-dashboard-navigator>
+                <app-primary-button (click)="toggleDropdown('bookManager')">Book Manager</app-primary-button>
+                <div *ngIf="dropdowns.bookManager" class="dropdown-content">
+                    <p (click)="serchBook()">Search Book</p>
+                    <p (click)="addBook()">Add Book</p>
+                    <p (click)="updateBook()">Update Book</p>
+                </div>
+
+                <span></span>
+                <app-primary-button (click)="toggleDropdown('loanControl')">Loan control</app-primary-button>
+                <div *ngIf="dropdowns.loanControl" class="dropdown-content">
+                    <p (click)="searchLoan()">Search Loan</p>
+                    <p (click)="createLoan()">Create Loan</p>
+                    <p (click)="updateLoan()">Update Loan</p>
+                </div>
+
+                <span></span>
+                <app-primary-button (click)="toggleDropdown('libraryUsers')">Library Users</app-primary-button>
+                <div *ngIf="dropdowns.libraryUsers" class="dropdown-content">
+                    <p (click)="searchUser()">Search User</p>
+                    <p (click)="addUser()">Add User</p>
+                    <p (click)="removeUser()">Remove User</p>
+                    <p (click)="updateUser()">Update User</p>
+                </div>
+            </app-default-dashboard-navigator>
         </div>
         <div class="content">Dashboard content</div>
     </div>

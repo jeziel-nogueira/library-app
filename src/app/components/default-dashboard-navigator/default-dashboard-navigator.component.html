@@ -1,25 +1,3 @@
 <div class="content">
-    <app-primary-button (click)="toggleDropdown('bookManager')" >Book Manager</app-primary-button>
-    <div *ngIf="dropdowns.bookManager" class="dropdown-content">
-        <p>View Books</p>
-        <p>Add Book</p>
-        <p>Remove Book</p>
-    </div>
-
-    <span></span>
-    <app-primary-button (click)="toggleDropdown('loanControl')">Loan control</app-primary-button>
-    <div *ngIf="dropdowns.loanControl" class="dropdown-content">
-        <p>View Loans</p>
-        <p>Approve Loan</p>
-        <p>Return Book</p>
-    </div>
-
-    <span></span>
-    <app-primary-button (click)="toggleDropdown('libraryUsers')">Library Users</app-primary-button>
-    <div *ngIf="dropdowns.libraryUsers" class="dropdown-content">
-        <p>View Users</p>
-        <p>Add User</p>
-        <p>Remove User</p>
-    </div>
-
+    <ng-content></ng-content>
 </div>

@@ -6,26 +6,4 @@
     height: 100%;
     padding: 30px;
     background-color: greenyellow;
-
-    span{
-        height: 10px;
-    }
-
-    .dropdown-content {
-        margin-bottom: 10px;
-        padding: 10px;
-        background: #f4f4f4;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        p{
-            padding-top: 5px;
-            color: $text-color;
-            cursor: pointer;
-        }
-
-        p & :hover{
-            background-color: yellow;
-        }
-    }
-    
 }
