@@ -7,29 +7,46 @@
             <app-default-dashboard-navigator>
                 <app-primary-button (click)="toggleDropdown('bookManager')">Book Manager</app-primary-button>
                 <div *ngIf="dropdowns.bookManager" class="dropdown-content">
-                    <p (click)="serchBook()">Search Book</p>
-                    <p (click)="addBook()">Add Book</p>
-                    <p (click)="updateBook()">Update Book</p>
+                    <p (click)="setActiveComponent('searchBook')">Search Book</p>
+                    <p (click)="setActiveComponent('addBook')">Add Book</p>
+                    <p (click)="setActiveComponent('updateBook')">Update Book</p>
                 </div>
 
                 <span></span>
                 <app-primary-button (click)="toggleDropdown('loanControl')">Loan control</app-primary-button>
                 <div *ngIf="dropdowns.loanControl" class="dropdown-content">
-                    <p (click)="searchLoan()">Search Loan</p>
-                    <p (click)="createLoan()">Create Loan</p>
-                    <p (click)="updateLoan()">Update Loan</p>
+                    <p (click)="setActiveComponent('searchLoan')">Search Loan</p>
+                    <p (click)="setActiveComponent('createLoan')">Create Loan</p>
+                    <p (click)="setActiveComponent('updateLoan')">Update Loan</p>
                 </div>
 
                 <span></span>
                 <app-primary-button (click)="toggleDropdown('libraryUsers')">Library Users</app-primary-button>
                 <div *ngIf="dropdowns.libraryUsers" class="dropdown-content">
-                    <p (click)="searchUser()">Search User</p>
-                    <p (click)="addUser()">Add User</p>
-                    <p (click)="removeUser()">Remove User</p>
-                    <p (click)="updateUser()">Update User</p>
+                    <p (click)="setActiveComponent('searchUser')">Search User</p>
+                    <p (click)="setActiveComponent('addUser')">Add User</p>
+                    <p (click)="setActiveComponent('removeUser')">Remove User</p>
+                    <p (click)="setActiveComponent('updateUser')">Update User</p>
                 </div>
             </app-default-dashboard-navigator>
         </div>
-        <div class="content">Dashboard content</div>
+        <div class="content">
+            <ng-container [ngSwitch]="activeComponent">
+                <app-dashboard-search-book *ngSwitchCase="'searchBook'"></app-dashboard-search-book>
+                <app-dashboard-add-book *ngSwitchCase="'addBook'"></app-dashboard-add-book>
+                <app-dashboard-update-book *ngSwitchCase="'updateBook'"></app-dashboard-update-book>
+
+                <app-dashboard-search-loan *ngSwitchCase="'searchLoan'"></app-dashboard-search-loan>
+                <app-dashboard-create-loan *ngSwitchCase="'createLoan'"></app-dashboard-create-loan>
+                <app-dashboard-update-loan *ngSwitchCase="'updateLoan'"></app-dashboard-update-loan>
+
+                <app-dashboard-search-user *ngSwitchCase="'searchUser'"></app-dashboard-search-user>
+                <app-dashboard-add-user *ngSwitchCase="'addUser'"></app-dashboard-add-user>
+                <app-dashboard-remove-user *ngSwitchCase="'removeUser'"></app-dashboard-remove-user>
+                <app-dashboard-update-user *ngSwitchCase="'updateUser'"></app-dashboard-update-user>
+
+                <app-dashboard-overview *ngSwitchDefault></app-dashboard-overview>
+            </ng-container>
+        </div>
     </div>
 </div>
