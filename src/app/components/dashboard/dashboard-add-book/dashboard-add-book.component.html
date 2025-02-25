@@ -1,1 +1,43 @@
-<p>add-book works!</p>
+<div class="book-form-container">
+    <h2>Cadastro de Livro</h2>
+  
+    <form [formGroup]="bookForm" (ngSubmit)="submitBook()">
+      <label for="title">Título</label>
+      <input id="title" formControlName="title" type="text" />
+      
+  
+      <label for="author">Autor</label>
+      <input id="author" formControlName="author" type="text" />
+  
+      <label for="description">Descrição</label>
+      <textarea id="description" formControlName="description"></textarea>
+  
+      <label for="genre">Gênero</label>
+      <input id="genre" formControlName="genre" type="text" />
+  
+      <label for="isbn">ISBN</label>
+      <input id="isbn" formControlName="isbn" type="text" />
+  
+      <label for="status">Status</label>
+      <select id="status" formControlName="status">
+        <option value="AVAILABLE">Disponível</option>
+        <option value="RESERVED">Reservado</option>
+        <option value="UNAVAILABLE">Indisponivel</option>
+      </select>
+  
+      <label for="publisher">Editora</label>
+      <input id="publisher" formControlName="publisher" type="text" />
+  
+      <label for="tags">Tags</label>
+      <input id="tags" formControlName="tags" type="text" />
+  
+      <label for="coverUrl">URL da Capa</label>
+      <input id="coverUrl" formControlName="coverUrl" type="text" />
+  
+      <button type="submit" [disabled]="bookForm.invalid || isSubmitting">
+        {{ isSubmitting ? 'Cadastrando...' : 'Cadastrar Livro' }}
+      </button>
+    </form>
+  
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+  </div>

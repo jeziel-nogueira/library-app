@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginResponse } from '../types/login-response.type';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
+import { Book } from '../models/book-model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class HTTPClientService {
 
   apiUrl:string = ""
 
@@ -28,5 +29,9 @@ export class LoginService {
         sessionStorage.setItem("username", value.name)
       })
     )
+  }
+
+  addBook(book: Book) {
+    return this.httpClient.post<Book>(this.apiUrl, book);
   }
 }
